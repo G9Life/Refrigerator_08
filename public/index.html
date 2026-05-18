@@ -20,8 +20,9 @@
       <section class="panel">
         <label class="upload-box" for="imageInput">
           <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" />
-          <span>냉장고 사진 선택</span>
-          <small>최대 10MB</small>
+          <span>냉장고 사진 업로드</span>
+          <small id="fileHelp">JPG, PNG, WebP, 최대 10MB</small>
+          <strong id="fileName" class="file-name hidden"></strong>
         </label>
 
         <div id="previewWrap" class="preview-wrap hidden">
@@ -29,11 +30,11 @@
         </div>
 
         <div class="actions">
-          <button id="recognizeButton" type="button" disabled>재료 인식</button>
-          <button id="clearButton" type="button" class="secondary">초기화</button>
+          <button id="recognizeButton" type="button" disabled>사진에서 재료 찾기</button>
+          <button id="clearButton" type="button" class="secondary">사진 다시 선택</button>
         </div>
 
-        <p id="statusMessage" class="status" role="status"></p>
+        <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
       </section>
 
       <section id="resultPanel" class="panel hidden">
@@ -48,13 +49,14 @@
         <div id="ingredientsList" class="ingredients-list"></div>
 
         <div class="actions">
-          <button id="confirmButton" type="button">2단계로 넘길 재료 확정</button>
+          <button id="confirmButton" type="button">이 재료로 Step 2 진행</button>
         </div>
       </section>
 
       <section id="confirmedPanel" class="panel hidden">
         <p class="eyebrow">확정된 입력</p>
         <h2>다음 단계 전달 데이터</h2>
+        <p id="confirmedSummary" class="success-summary"></p>
         <pre id="confirmedJson"></pre>
       </section>
     </main>

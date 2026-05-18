@@ -92,6 +92,11 @@ input {
   border-color: var(--primary);
 }
 
+.upload-box:focus-within {
+  outline: 3px solid rgba(47, 107, 63, 0.25);
+  outline-offset: 3px;
+}
+
 .upload-box input {
   position: absolute;
   width: 1px;
@@ -108,6 +113,12 @@ input {
 .upload-box small {
   margin-top: 8px;
   color: var(--muted);
+}
+
+.file-name {
+  margin-top: 12px;
+  color: var(--primary-dark);
+  font-size: 14px;
 }
 
 .preview-wrap {
@@ -140,6 +151,19 @@ button {
   color: white;
   font-weight: 800;
   cursor: pointer;
+}
+
+button.loading::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-top-color: white;
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: spin 0.8s linear infinite;
 }
 
 button:hover:not(:disabled) {
@@ -175,6 +199,16 @@ button.danger {
 .status.error {
   color: var(--danger);
   font-weight: 700;
+}
+
+.success-summary {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #edf8ed;
+  color: var(--primary-dark);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .section-title {
@@ -238,7 +272,17 @@ pre {
   display: none;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 760px) {
+  .actions button {
+    width: 100%;
+  }
+
   .ingredient-row {
     grid-template-columns: 1fr;
   }
