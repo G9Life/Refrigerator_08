@@ -1,0 +1,12 @@
+{
+  "name": "refrigerator-ingredient-recognizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Step 1 web app for recognizing refrigerator ingredients with OpenRouter.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

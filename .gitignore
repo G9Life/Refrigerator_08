@@ -1,0 +1,17 @@
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Common local artifacts
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
